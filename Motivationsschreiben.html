@@ -34,8 +34,8 @@
 
       p {
         margin: 1px 0;
-        text-align: c;
-        line-height: 1.5;
+        text-align: justify;
+        line-height: 1.7;
         font-size: 16px;
         margin-top: 3%;
         margin-right: 65px;
@@ -49,7 +49,7 @@
       }
 
       .contact-info {
-        max-width: 900px;
+        max-width: 907px;
         margin: 0 auto;
         padding: 15px;
         border: none;
@@ -67,17 +67,16 @@
         margin-top: 25px;
         margin-bottom: 10px;
       }
+
       h1 img {
-        width: 218px; /* Set a fixed size for the image */
-        height: 310px; /* Keep the image's height the same as the width */
-        border-radius: 50%; /* Make the image circular */
-        object-fit: cover; /* Ensure the image covers the area without distortion */
-        margin-top: 15px; /* Add some space between the text and image */
-        border: 3px solid #2c3e50; /* Add a subtle border around the image */
+        width: 218px;
+        height: 310px;
+        border-radius: 50%;
+        object-fit: cover;
+        margin-top: 15px;
+        border: 3px solid #2c3e50;
         float: right;
         margin-left: 0%;
-      
-        
       }
 
       .table {
@@ -86,20 +85,31 @@
         padding-left: 27%;
         font-size: 20px;
       }
+
+      .date {
+        font-size: 20px;
+        margin-top: 25px;
+        margin-bottom: 10px;
+      }
     </style>
   </head>
 
   <body>
     <div class="contact-info">
+      <!-- Insert Date Here -->
+     
+
       <h1>Abdi Abdirashid</h1>
       <h1><img src="img.png" height="200" alt="Me"></h1>
+     
       <h3>Stallikerstrasse 5a</h3>
-      <h3>8906 Bonstetten</h3>
+      <h3>8906 Bonstetten</h3> 
+      <div class="date" id="current-date"></div>
 
       <hr />
 
-      <h2>Motivationsschreiben</h2>
-      <p>Sehr geehrte Damen und Herren,</p>
+      <h2>Motivation Letter</h2>
+   <p>Sehr geehrte Damen und Herren,</p>
 
       <p>ich stamme aus der kleinen Stadt El Bur im Süden Somalias, einem Ort voller Geschichten und Herausforderungen, die meinen Lebensweg geprägt haben.. Aufgrund der Konflikte in meinem Heimatland musste meine Familie oft umziehen, wodurch ich mich immer wieder an neue Schulsysteme und Umgebungen anpassen musste. Diese Herausforderungen haben mir wertvolle kulturelle Kenntnisse und eine hohe Anpassungsfähigkeit vermittelt. Ich habe in mehreren afrikanischen Ländern gelebt, darunter Kenia, Tansania und Äthiopien, was meine Fähigkeit, mich schnell auf neue Gegebenheiten einzustellen, nachhaltig geprägt hat. Im Alter von 15 Jahren zog ich in die Schweiz, nachdem mein Onkel in Großbritannien unsere Familie finanziell nicht mehr unterstützen konnte. Die Eingewöhnung in der Schweiz fiel mir leicht, und ich legte meinen Fokus darauf, die Sprache schnell zu erlernen, da dies eine meiner besonderen Stärken ist.</p>
 
@@ -111,18 +121,25 @@
 
       <p>Ich freue mich darauf, Sie in einem persönlichen Gespräch von meiner Eignung zu überzeugen und bin auch bereit, meine Fähigkeiten bei einem Probetag unter Beweis zu stellen. Vielen Dank für Ihre Zeit und Ihre Prüfung meiner Unterlagen.</p>
 
-      <p>Freundliche Grüsse,<br><br><img class="signature" src="Picture1.png" alt="signature"><br><br>Abdi Abdirashid</p> <th><a href="Berufsattest Unterhaltspraktiker EBA-1.png" target="_blank">Diplom</th>
+      <p>Freundliche Grüsse,,<br><br><img class="signature" src="Picture1.png" alt="signature"><br><br>Abdi Abdirashid</p>
+      <th><a href="Berufsattest Unterhaltspraktiker EBA-1.png" target="_blank">Diplom</a></th>
     </div>
 
     <table class="table">
       <tr class="hobbies">
-       
       </tr>
       <tr>
-       
-       
-     
       </tr>
     </table>
+
+    <script>
+      // Get current date in the format: Month Day, Year (e.g., January 25, 2025)
+      const currentDate = new Date();
+      const options = { year: 'numeric', month: 'long', day: 'numeric' };
+      const dateString = currentDate.toLocaleDateString('de-DE', options);  // Adjusting for German locale
+
+      // Display the date inside the "current-date" div
+      document.getElementById('current-date').innerText = dateString;
+    </script>
   </body>
 </html>
