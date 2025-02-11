@@ -116,16 +116,14 @@
       .fähigkeiten,
       .berufserfahrung,
       .kompetenzbewertung,
-      .sonstiges
-      
-      .hobbies {
+      .sonstiges .hobbies {
         padding-left: 20px; /* Added padding for better alignment */
         padding-right: 20px; /* Ensured content doesn't touch the edge */
       }
-     
+
       .sonstiges {
         padding-left: 20px; /* Added padding for better alignment */
-        padding-right: 20px
+        padding-right: 20px;
       }
       .hobbies {
         color: #520707;
@@ -133,9 +131,8 @@
       .contact {
         padding-left: 77%;
         line-height: 1.8;
-       
       }
-     .contact a{
+      .contact a {
         color: #2422a9be;
         width: max-content;
         font-size: 22px;
@@ -143,7 +140,7 @@
         cursor: pointer;
         margin: 100px auto;
       }
-       .contact a::after{
+      .contact a::after {
         content: "";
         position: absolute;
         bottom: -0px;
@@ -154,9 +151,8 @@
         transition: 0.3s;
         transition-timing-function: ease-in-out;
         transform: scaleX(0);
-
       }
-       .contact a:hover::after{
+      .contact a:hover::after {
         transform: scaleX(1);
       }
 
@@ -165,12 +161,9 @@
         width: max-content;
         position: relative;
         cursor: pointer;
-
-       
-       
       }
 
-      .adress::after{
+      .adress::after {
         content: "";
         position: absolute;
         bottom: -0px;
@@ -181,18 +174,20 @@
         transition: 0.3s;
         transition-timing-function: ease-in-out;
         transform: scaleX(0);
+        transform-origin: left center;
       }
 
-      .adress:hover::after{
+      .adress:hover::after {
         transform: scaleX(1);
       }
-      .contact a, p {
-        line-height: 1.0;
+      .contact a,
+      p {
+        line-height: 1;
       }
-       .zusammenfassung {
+      .zusammenfassung {
         line-height: 1.6;
       }
-       .date {
+      .date {
         padding-left: 78%;
         line-height: 1.6;
         margin-top: 25px;
@@ -204,61 +199,118 @@
       .bday:hover {
         transition: font-weight 0.3s ease;
       }
+
+      .table {
+        width: 20%;
+        border-collapse: collapse;
+      }
+
+      .table th {
+        padding: 5px;
+        text-align: left;
+        padding-left: 20px;
+      }
+
+      .table a {
+        text-decoration: none; /* Remove the default underline */
+        color: #1310bcbe; /* Default text color */
+        position: relative; /* Position relative for the after element */
+        font-size: 16px;
+        cursor: pointer;
+      }
+
+      .table a:hover {
+        color: #007bff; /* Change color on hover */
+      }
+
+      /* Hover underline effect using the ::after pseudo-element */
+      .table a::after {
+        content: "";
+        position: absolute;
+        bottom: -2px; /* Refined positioning for the underline */
+        left: 0;
+        height: 2px;
+        width: 100%;
+        background-color: rgb(143, 39, 39);
+        transition: transform 0.3s ease-in-out;
+        transform: scaleX(0);
+        transform-origin: left center; /* Start scaling from left */
+      }
+
+      .table a:hover::after {
+        transform: scaleX(1);
+      }
     </style>
   </head>
   <body>
-    
     <h1>Abdi Abdirashid</h1>
     <h1><img src="img.png" height="250" alt="Photo" /></h1>
 
     <div class="contact">
-       <p class="bday"> 🎂 01.02.2000</p>
+      <p class="bday">🎂 01.02.2000</p>
       <p>
         ☎️
-        <a href="tel:+41764597006 ">+41 76 459 70 06</a>
+        <a href="tel:+41764597006">+41 76 459 70 06</a>
       </p>
       <p>
         💌
-        <a href="mailto:abdi.abdirashid@hotmail.com">abdi.abdirashid@hotmail.com</a>
+        <a href="mailto:abdi.abdirashid@hotmail.com"
+          >abdi.abdirashid@hotmail.com</a
+        >
       </p>
-      <p class="adress">📍<a href="https://www.google.com/maps?q=Stallikerstrasse+5A,+8906+Bonstetten" target="_blank">Stallikerstrasse 5A, 8906 Bonstetten</p>
-      </div><a>
-     <div class="date" id="current-date"></div>
+      <p class="adress">
+        📍
+        <a
+          href="https://www.google.com/maps?q=Stallikerstrasse+5A,+8906+Bonstetten"
+          target="_blank"
+        >
+          Stallikerstrasse 5A, 8906 Bonstetten
+        </a>
+      </p>
+    </div>
+    <div class="date" id="current-date"></div>
 
     <h2 class="zusammenfassung">Zusammenfassung</h2>
-    <p class="zusammenfassung"> Erfahrener Fachmann in der Betriebsunterhaltung, Montage und Produktion mit ausgeprägten handwerklichen Fähigkeiten. 
-       Leidenschaftlich<br /> im Drohnenfliegen und in der Videobearbeitung, mit kontinuierlicher Entwicklung meiner kreativen und technischen Fähigkeiten. <br/>
-       <p class="strong">Weiteren Dokumente und mehr von mir sind unten links angehängt.</p>
-
+    <p class="zusammenfassung">
+      Erfahrener Fachmann in der Betriebsunterhaltung, Montage und Produktion
+      mit ausgeprägten handwerklichen Fähigkeiten. <br />
+      Leidenschaftlich im Drohnenfliegen und in der Videobearbeitung, mit
+      kontinuierlicher Entwicklung meiner kreativen und technischen Fähigkeiten.
     </p>
-
-   
+    <p class="strong">
+      Weiteren Dokumente und mehr von mir sind unten links angehängt.
+    </p>
 
     <h2 class="berufserfahrung">Berufserfahrung</h2>
     <ul>
       <li>12/2024 – heute: Aktive Arbeitssuche</li>
       <li>
-        09/2024 – 12/2024: Zimmermann bei Egli Zimmerei (Befristetes Arbeitsverhältnis)
+        09/2024 – 12/2024: Zimmermann bei Egli Zimmerei (Befristetes
+        Arbeitsverhältnis)
       </li>
       <li>
         06/2024 – 09/2024: Temporäre Einsätze bei Qero AG und Topas Personal
       </li>
       <li>11/2023 – 05/2024: Alrounder, Onyx Restaurant in Baar, Zug</li>
       <li>
-        01/2023 – 10/2023: Temporäre Einsätze bei verschiedenen Firmen (Alle befristet)
+        01/2023 – 10/2023: Temporäre Einsätze bei verschiedenen Firmen (Alle
+        befristet)
       </li>
       <li>
-        08/2022 – 12/2022: Montagearbeiter, V-ZUG, Zug (Befristetes Arbeitsverhältnis)
+        08/2022 – 12/2022: Montagearbeiter, V-ZUG, Zug (Befristetes
+        Arbeitsverhältnis)
       </li>
       <li>
-        01/2022 – 07/2022: Fahrer B/E, Galliker Transport AG, Altishofen (Befristetes Arbeitsverhältnis)
+        01/2022 – 07/2022: Fahrer B/E, Galliker Transport AG, Altishofen
+        (Befristetes Arbeitsverhältnis)
       </li>
       <li>
-        08/2021 – 12/2021: Reinigungskraft, Schule Hagendorn (Befristetes Arbeitsverhältnis)
+        08/2021 – 12/2021: Reinigungskraft, Schule Hagendorn (Befristetes
+        Arbeitsverhältnis)
       </li>
     </ul>
-    
-  <h2 class="ausbildung">Ausbildung</h2>
+
+    <h2 class="ausbildung">Ausbildung</h2>
     <ul>
       <li>
         08/2019 – 07/2021: Lehre als Unterhaltspraktiker EBA, Gemeinde Cham, Zug
@@ -268,7 +320,7 @@
       <li>03/2007 – 05/2010: Primarschule, Somalia</li>
     </ul>
 
-     <h2 class="fähigkeiten">Fähigkeiten</h2>
+    <h2 class="fähigkeiten">Fähigkeiten</h2>
     <ul>
       <li>Betriebsunterhalt</li>
       <li>Zimmerei und Holzarbeiten</li>
@@ -281,43 +333,49 @@
       <li>Drohnenfliegen und Luftaufnahmen</li>
       <li>Videobearbeitung und Multimedia-Produktion</li>
       <li>Anpassungsfähigkeit an temporäre und befristete Tätigkeiten</li>
-      <li>Mehrsprachige Kommunikation (Deutsch, Englisch, Somali)
-      </li>
+      <li>Mehrsprachige Kommunikation (Deutsch, Englisch, Somali)</li>
     </ul>
-    
 
     <h2 class="kompetenzbewertung">Kompetenzbewertung</h2>
     <ul>
       <li>Kundenservice: ⭐️⭐️⭐️⭐️⭐️</li>
-      <li>Microsoft Office Suite:  ⭐️⭐️⭐️</li>
+      <li>Microsoft Office Suite: ⭐️⭐️⭐️</li>
       <li>Organisationsfähigkeiten:⭐️⭐️⭐️⭐️</li>
     </ul>
 
-
-     <h2 class="sonstiges">Sonstiges</h2>
+    <h2 class="sonstiges">Sonstiges</h2>
 
     <table class="table">
       <tr class="hobbies">
         <th><a href="hobbies.html" target="_blank">Hobbies</a></th>
         <th><a href="contact.html" target="_blank">ContactMe</a></th>
       </tr>
-      <tr>
-        <th><a href="Motivationsschreiben.html" target="_blank">Motivationsschreiben/Diplom</th>
-       
-        <th><a href="Ausweis & Führerausweis_compressed-2-imageonline.co-merged-min.png" target="_blank">Dokumentenausweis</th>
+      <tr class="motivations">
+        <th>
+          <a href="Motivationsschreiben.html" target="_blank"
+            >Motivationsschreiben/Diplom</a
+          >
+        </th>
+        <th>
+          <a
+            href="Ausweis & Führerausweis_compressed-2-imageonline.co-merged-min.png"
+            target="_blank"
+            >Dokumentenausweis</a
+          >
+        </th>
       </tr>
     </table>
 
-     <script>
+    <script>
       // Get current date in the format: Month Day, Year (e.g., January 25, 2025)
       const currentDate = new Date();
-      const options = { year: 'numeric', month: 'long', day: 'numeric' };
-      const dateString = currentDate.toLocaleDateString('de-DE', options);  // Adjusting for German locale
+      const options = { year: "numeric", month: "long", day: "numeric" };
+      const dateString = currentDate.toLocaleDateString("de-DE", options); // Adjusting for German locale
 
       // Display the date inside the "current-date" div
-      document.getElementById('current-date').innerText = dateString;
+      document.getElementById("current-date").innerText = dateString;
     </script>
-    
+
     <footer>
       <p>© Abdi Abdirashid. All rights reserved</p>
     </footer>
