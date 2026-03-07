@@ -1,391 +1,144 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>My Resume</title>
-    <style>
-      /* General body styles */
-      body {
-        font-family: Arial, sans-serif;
-        background-color: #f4f4f4;
-        color: #333;
-        margin: 0;
-        padding: 0;
-        line-height: 1.6; /* Increased line-height for readability */
-        padding-bottom: 70px; /* Ensure space for footer */
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hobbies</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Poppins', sans-serif;
+      color: #13355aec;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .video-container {
+  position: fixed;
+  width: 100%;
+  height: 101%;
+}
+    .video-container video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      min-width: 100%;
+      min-height: 100%;
+    }
+    .content {
+      position: relative;
+      z-index: 1;
+      padding: 25px;
+      background: rgba(255, 255, 255, 0.6); /* Adjusted for transparency */
+      max-width: 1200px;
+      border-radius: 12px;
+     box-shadow: 0 6px 15px rgba(1, 30, 247, 0.2);
+      font-size: 16px;
+      text-align: center;
+      backdrop-filter: blur(0px); /* Blurred background effect */
+    }
+    h1 {
+      text-align: center;
+      font-size: 28px;
+      margin-bottom: 5px;
+      font-weight: 600;
+       color: #314a62;
+    }
+    p, ul {
+      font-size: 16px;
+      text-align: left;
+      line-height: 1.6;
+    }
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+    ul li {
+      margin-bottom: 10px;
+      padding-left: 20px;
+      position: relative;
+    }
+    ul li::before {
+      content: '\2022';
+       color: #2e7e2e;
+      font-weight: bold;
+      display: inline-block; 
+      width: 1em;
+      margin-left: rem;
+      position: absolute;
+      left: 0;
+    }
+    @media (max-width: 768px) {
+      .content {
+        max-width: 90%;
+        font-size: 14px;
+        padding: 20px;
+        margin: 20px auto;
       }
+    }
+    @media (max-width: 430px) {
+      .content {
+        max-width: 95%;
+        font-size: 14px;
+        padding: 15px;
+        margin: 20px auto;
+      }
+    }
+    .video-box {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+}
 
-      /* Header styles */
-      h1 {
-        text-align: center;
-        color: #2c3e50;
-        margin-top: 3px;
-      }
+.video-box video {
+  width: 100%;
+  max-width: 600px;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="video-box">
+  <video controls>
+    <source src="video (1).mp4" type="video/mp4">
+  </video>
+</div>
 
-      h1 img {
-        width: 230px; /* Set a fixed size for the image */
-        height: 310px; /* Keep the image's height the same as the width */
-        border-radius: 50%; /* Make the image circular */
-        object-fit: cover; /* Ensure the image covers the area without distortion */
-        margin-top: 15px; /* Add some space between the text and image */
-        border: 3px solid #2c3e50; /* Add a subtle border around the image */
-      }
-
-      /* Section headers */
-      h2 {
-        color: #2c3e50;
-        border-bottom: 2px solid #2c3e50;
-        padding-bottom: 8px;
-        margin-bottom: 2px; /* Increased margin for spacing */
-      }
-
-      /* Styling for paragraphs */
-      p {
-        font-size: 1.1rem;
-        margin-bottom: 20px; /* Increased margin for more space */
-        line-height: 1.6; /* Increased line-height */
-        padding-left: 1%;
-      }
-
-      /* List styling */
-      ul {
-        list-style-type: none;
-        padding-left: 29px;
-      }
-
-      ul li {
-        font-size: 1.1rem;
-        margin-bottom: 1px; /* Increased margin for more spacing between items */
-      }
-
-      /* Horizontal line styling */
-      hr {
-        border: 0;
-        border-top: 2px solid #bdc3c7;
-        margin: 3px 0; /* Added extra margin for spacing */
-      }
-
-      /* Link styles */
-      a {
-        color: #3498db;
-        text-decoration: none;
-      }
-
-      a:hover {
-        text-decoration: underline;
-      }
-
-      /* Footer styling */
-      footer {
-        text-align: center;
-        padding: 2px;
-        background-color: #2c3e50;
-        color: white;
-        position: fixed;
-        width: 100%;
-        bottom: 0;
-      }
-
-      /* Responsive styling */
-      @media (max-width: 768px) {
-        h1 {
-          font-size: 1.8rem;
-        }
-
-        p,
-        ul li {
-          font-size: 1rem;
-        }
-
-        hr {
-          margin: 20px 0;
-        }
-      }
-
-      .clearfix::after {
-    content: "";
-    display: table;
-    clear: both;
-  }
-
-      .table {
-        width: 200px;
-        text-align: left;
-        padding-left: 20px;
-      }
-
-      /* Specific class styling */
-      .zusammenfassung,
-      .ausbildung,
-      .berufserfahrung,
-      .fähigkeiten,
-      .berufserfahrung,
-      .kompetenzbewertung,
-      .sonstiges .hobbies {
-        padding-left: 20px; /* Added padding for better alignment */
-        padding-right: 20px; /* Ensured content doesn't touch the edge */
-      }
-
-      .sonstiges {
-        padding-left: 20px; /* Added padding for better alignment */
-        padding-right: 20px;
-      }
-      .hobbies {
-        color: #520707;
-      }
-      .contact {
-        padding-left: 3%;
-        line-height: 1.8;
-      }
-      .contact a {
-        color: #2422a9be;
-        width: max-content;
-        font-size: 22px;
-        position: relative;
-        cursor: pointer;
-        margin: 100px auto;
-      }
-      .contact a::after {
-        content: "";
-        position: absolute;
-        bottom: -0px;
-        height: 2px;
-        width: 100%;
-        left: 0;
-        background-color: rgb(148, 41, 41);
-        transition: 0.3s;
-        transition-timing-function: ease-in-out;
-        transform: scaleX(0);
-      }
-      .contact a:hover::after {
-        transform: scaleX(1);
-      }
-
-      .adress {
-        color: #2422a9be;
-        width: max-content;
-        position: relative;
-        cursor: pointer;
-      }
-
-      .adress::after {
-        content: "";
-        position: absolute;
-        bottom: -0px;
-        height: 2px;
-        width: 100%;
-        left: 0;
-        background-color: rgb(148, 41, 41);
-        transition: 0.3s;
-        transition-timing-function: ease-in-out;
-        transform: scaleX(0);
-        transform-origin: left center;
-      }
-
-      .adress:hover::after {
-        transform: scaleX(1);
-      }
-      .contact a,
-      p {
-        line-height: 1;
-      }
-      .zusammenfassung {
-        line-height: 1.6;
-      }
-      .date {
-        padding-left: 78%;
-        line-height: 1.6;
-        margin-top: 25px;
-      }
-      .strong {
-        padding-left: 20px;
-        font-weight: bold;
-      }
-      .bday:hover {
-        transition: font-weight 0.3s ease;
-      }
-
-      .table {
-        width: 37%;
-        border-collapse: collapse;
-        margin-top: 15px
-      }
-
-      .table th {
-        padding: 3px;
-        text-align: left;
-        padding-left: 70px;
-      }
-
-      .table a {
-        text-decoration: none; /* Remove the default underline */
-        color: #1310bcbe; /* Default text color */
-        position: relative; /* Position relative for the after element */
-        font-size: 19px;
-        cursor: pointer;
-        line-heigt: 1.3;
-      }
-
-      .table a:hover {
-        color: #007bff; /* Change color on hover */
-      }
-
-      /* Hover underline effect using the ::after pseudo-element */
-      .table a::after {
-        content: "";
-        position: absolute;
-        bottom: -2px; /* Refined positioning for the underline */
-        left: 0;
-        height: 2px;
-        width: 100%;
-        background-color: rgb(143, 39, 39);
-        transition: transform 0.3s ease-in-out;
-        transform: scaleX(0);
-        transform-origin: left center; /* Start scaling from left */
-      }
-
-      .table a:hover::after {
-        transform: scaleX(1);
-      }
-    </style>
-  </head>
-  <body>
-    <h1>Abdi Abdirashid</h1>
-    <h1><img src="img.png" height="250" alt="Photo" /></h1>
-
-    <div class="contact">
-      <p class="bday">🎂 01.02.2000</p>
-      <p>
-        ☎️
-        <a href="tel:+41764597006">+41 76 459 70 06</a>
+  <div class="content">
+    <h1>Hobbies</h1>
+  <p>
+        In meiner Freizeit programmiere ich gerne und stelle mich neuen
+        Herausforderungen in der Softwareentwicklung, was mir ermöglicht, meine
+        technischen Fähigkeiten kontinuierlich zu verbessern.
       </p>
-      <p>
-        💌
-        <a href="mailto:abdi.abdirashid@hotmail.com"
-          >abdi.abdirashid@hotmail.com</a
-        >
-      </p>
-      <p class="adress">
-        📍
-        <a
-          href="https://www.google.com/maps?q=Stallikerstrasse+5A,+8906+Bonstetten"
-          target="_blank"
-        >
-          Stallikerstrasse 5A, 8906 Bonstetten
-        </a>
-      </p>
-    </div>
-    <div class="date" id="current-date"></div>
-
-    <h2 class="zusammenfassung">Zusammenfassung</h2>
-    <p class="zusammenfassung">
-      Erfahrener Fachmann in der Betriebsunterhaltung, Montage und Produktion
-      mit ausgeprägten handwerklichen Fähigkeiten. <br />
-      Leidenschaftlich im Drohnenfliegen und in der Videobearbeitung, mit
-      kontinuierlicher Entwicklung meiner kreativen und technischen Fähigkeiten.
-    </p>
-    <p class="strong">
-      Zusätzliche Dokumente und weitere Informationen über mich sind unten angehängt, mit klickbaren Links ganz unten.
-    </p>
-
-    <h2 class="berufserfahrung">Berufserfahrung</h2>
-    <ul>
-      <li>04/2025 – heute: Stooss AG</li>
-      <li>
-        09/2024 – 12/2024: Zimmermann bei Egli Zimmerei (Befristetes
-        Arbeitsverhältnis)
-      </li>
-      <li>
-        06/2024 – 09/2024: Temporäre Einsätze bei Qero AG und Topas Personal
-      </li>
-      <li>11/2023 – 05/2024: Alrounder, Onyx Restaurant in Baar, Zug</li>
-      <li>
-        01/2023 – 10/2023: Temporäre Einsätze bei verschiedenen Firmen (Alle
-        befristet)
-      </li>
-      <li>
-        08/2022 – 12/2022: Montagearbeiter, V-ZUG, Zug (Befristetes
-        Arbeitsverhältnis)
-      </li>
-      <li>
-        01/2022 – 07/2022: Fahrer B/E, Galliker Transport AG, Altishofen
-        (Befristetes Arbeitsverhältnis)
-      </li>
-      <li>
-        08/2021 – 12/2021: Reinigungskraft, Schule Hagendorn (Befristetes
-        Arbeitsverhältnis)
-      </li>
-    </ul>
-
-    <h2 class="ausbildung">Ausbildung</h2>
-    <ul>
-      <li>
-        08/2019 – 07/2021: Lehre als Unterhaltspraktiker EBA, Gemeinde Cham, Zug
-      </li>
-      <li>08/2017 – 07/2019: Brückenangebot, Zug</li>
-      <li>02/2013 – 08/2015: Sekundarschule, Kenia, Nairobi</li>
-      <li>03/2007 – 05/2010: Primarschule, Somalia</li>
-    </ul>
-
-    <h2 class="fähigkeiten">Fähigkeiten</h2>
-    <ul>
-      <li>Betriebsunterhalt</li>
-      <li>Zimmerei und Holzarbeiten</li>
-      <li>Montage und Produktion</li>
-      <li>Technische Fertigkeiten in verschiedenen handwerklichen Berufen</li>
-      <li>Fahren und Logistik (Chauffeur B/E)</li>
-      <li>Büroverwaltung und Unterstützung</li>
-      <li>Kundenservice und Gastgewerbe</li>
-      <li>Reinigung und Gebäudemanagement</li>
-      <li>Drohnenfliegen und Luftaufnahmen</li>
-      <li>Videobearbeitung und Multimedia-Produktion</li>
-      <li>Anpassungsfähigkeit an temporäre und befristete Tätigkeiten</li>
-      <li>Mehrsprachige Kommunikation (Deutsch, Englisch, Somali)</li>
-    </ul>
-
-    <h2 class="kompetenzbewertung">Kompetenzbewertung</h2>
-    <ul>
-      <li>Kundenservice: ⭐️⭐️⭐️⭐️⭐️</li>
-      <li>Microsoft Office Suite: ⭐️⭐️⭐️</li>
-      <li>Organisationsfähigkeiten:⭐️⭐️⭐️⭐️</li>
-    </ul>
-
-    <h2 class="sonstiges">Sonstiges</h2>
-
-    <table class="table">
-      <tr class="hobbies">
-        <th><a href="hobbies.html" target="_blank">Hobbies</a></th>
-        <th><a href="contact.html" target="_blank">ContactMe</a></th>
-      </tr>
-      <tr class="motivations">
-        <th>
-          <a href="Motivationsschreiben.html" target="_blank"
-            >Bewerbung/Diplom/A1-A3-cert 🚁</a
-          >
-        </th>
-        <th>
-          <a
-href="Privacy Notice.html"
-            target="_blank"
-            >Dokumentenausweis</a
-          >
-        </th>
-      </tr>
-    </table>
-
-    <script>
-      // Get current date in the format: Month Day, Year (e.g., January 25, 2025)
-      const currentDate = new Date();
-      const options = { year: "numeric", month: "long", day: "numeric" };
-      const dateString = currentDate.toLocaleDateString("de-DE", options); // Adjusting for German locale
-
-      // Display the date inside the "current-date" div
-      document.getElementById("current-date").innerText = dateString;
-    </script>
-
-    <footer>
-      <p>© Abdi Abdirashid. All rights reserved</p>
-    </footer>
-  </body>
+      <ul>
+        <li>
+          Am Wochenende gehe ich oft mit meinem Mitbewohner Drohnen fliegen.
+          Dabei kombiniere ich meine Begeisterung für Technologie mit dem
+          Nervenkitzel von Outdoor-Abenteuern.
+        </li>
+        <li>
+          Ich bin auch leidenschaftlich am Thema Fitness interessiert und achte
+          darauf, Training und Bewegung in meinen Alltag zu integrieren, um
+          sowohl meine körperliche als auch meine mentale Gesundheit zu fördern.
+        </li>
+      </ul>
+  </div>
+   <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      let video = document.querySelector("video");
+      video.play().catch(error => console.log("Autoplay prevented: " + error));
+    });
+  </script>
+</body>
 </html>
